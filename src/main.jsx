@@ -15,6 +15,9 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import AuthProvider from './AuthProvider.jsx'
+import PrivateRoute from './PrivateRoute.jsx'
+
 
 const router = createBrowserRouter([
   {
@@ -43,8 +46,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/my-courses',
-        // element: <PrivateRoute> <MyToys /> </PrivateRoute>
-        element: <MyCourses />
+        element: <PrivateRoute> <MyCourses /> </PrivateRoute>
       },
       {
         path: '/courses',
@@ -64,14 +66,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* <AuthProvider> */}
+    <AuthProvider>
       <RouterProvider router={router} />
-    {/* </AuthProvider> */}
+    </AuthProvider>
   </React.StrictMode>,
 )
-
-// ReactDOM.createRoot(document.getElementById('root')).render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>,
-// )
