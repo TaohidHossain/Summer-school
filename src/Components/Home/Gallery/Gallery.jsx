@@ -20,7 +20,7 @@ const Gallery = ({ courses }) => {
                 <TabPanel >
                     <div className="gap-2 grid grid-cols-1 md:grid-cols-3">
                     {
-                        courses.filter(c => c.category == "Math").map(course => {
+                        courses.filter(c => c.category == "Programming language").map(course => {
                             return <Card  key={course._id} course={course} />
                         })
                     }
@@ -38,7 +38,7 @@ const Gallery = ({ courses }) => {
                 <TabPanel>
                     <div className="gap-2 grid grid-cols-1 md:grid-cols-3">
                     {
-                        courses.filter(c => c.category == "Math").map(course => {
+                        courses.filter(c => c.category == "Music").map(course => {
                             return <Card  key={course._id} course={course} />
                         })
                     }
